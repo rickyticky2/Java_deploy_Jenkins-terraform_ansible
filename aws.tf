@@ -15,7 +15,35 @@ resource "aws_instance" "web" {
 
 }
 
+resource "aws_security_group" "my_servers" {
+  name        = "my_security group"
+  description = "my_security group 1"
+  #vpc_id      = aws_vpc.main.id
 
+  ingress {
+    from_port        = 80
+    to_port          = 80
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+ingress {
+    from_port        = 22
+    to_port          = 22
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+
+
+  egress {
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+  }
+
+}
 
 output "first_ip" {
   value = "${aws_instance.web[0].public_ip}"
