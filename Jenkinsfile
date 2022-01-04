@@ -27,7 +27,7 @@ pipeline{
         }
         stage ('Run ansible playbook'){
             steps{
-                    withCredentials([usernamePassword(credentialsId: 'xxxxxxxxxxxxxxx', passwordVariable: 'DPWD', usernameVariable: 'DUSER')]) {
+                    withCredentials([usernamePassword(credentialsId: 'ae38ffdc-c52c-4c52-9dc7-90ae44610111', passwordVariable: 'DPWD', usernameVariable: 'DUSER')]) {
 
                         ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible', playbook: 'awsb.yml', become: true, extras: "-e'IP1=${IP1}' -e'IP2=${IP2}' -e'USER=${USER}' -e'PWD=${PWD}'"
                     }
