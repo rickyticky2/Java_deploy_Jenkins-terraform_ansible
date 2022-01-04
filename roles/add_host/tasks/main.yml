@@ -1,9 +1,9 @@
 ---
 # tasks file for add_host
 - name: Add ip instance to host files
-      add_host:
-        hostname: "{{ IP1 }}"
-        groupname: build_istance
+  add_host:
+    hostname: "{{ IP1 }}"
+    groupname: build_istance
 
 - name: Add ip instance to host files
   add_host:
