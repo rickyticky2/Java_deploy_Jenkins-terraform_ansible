@@ -14,7 +14,9 @@
 
 - name: install docker.io
   apt:
-    name: docker.io
+    pkg:
+    - docker.io
+    - python3-docker
     state: present
     update_cache: yes    
 
