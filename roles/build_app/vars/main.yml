@@ -5,4 +5,4 @@
    Dlogin:  "{{ DUSER }}"
    Dpassword: "{{ DPWD }}"
    repo_app: https://github.com/rickyticky2/boxfuse-sample-java-war-hello.git
-   app_name: boxfuse_app
+   app_name: rickyticky2/boxfuse_app

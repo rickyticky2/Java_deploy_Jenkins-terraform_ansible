@@ -37,7 +37,7 @@
   docker_image:
     build:
       path: /home/root/repo
-    name: rickyticky2/"{{app_name}}"
+    name: "{{app_name}}"
     tag: v1
     push: yes
     state: present
