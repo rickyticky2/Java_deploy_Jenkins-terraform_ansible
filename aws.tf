@@ -11,7 +11,7 @@ resource "aws_instance" "web" {
   #subnet_id = "subnet-0b2ff3014f0507633"
   key_name = "aazw"
   vpc_security_group_ids = [aws_security_group.my_servers.id]
-  user_data = <<EOF
+  user_data = << EOF
 		#!/bin/bash
     sudo apt update
     sudo apt install -y python3
