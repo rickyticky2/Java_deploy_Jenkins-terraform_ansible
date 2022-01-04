@@ -12,11 +12,11 @@ resource "aws_instance" "web" {
   key_name = "aazw"
   vpc_security_group_ids = [aws_security_group.my_servers.id]
   user_data = <<EOF
-		       #!/bin/bash
-           sudo apt update
-           sudo apt install python3 -y
-		       sudo apt install docker.io -y
-		       sudo systemctl start docker
+#!/bin/bash
+sudo apt update
+sudo apt install python3 -y
+sudo apt install docker.io -y
+sudo systemctl start docker
 	EOF
 }
 
