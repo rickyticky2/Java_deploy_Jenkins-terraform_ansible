@@ -13,9 +13,9 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = [aws_security_group.my_servers.id]
   user_data = <<EOF
 #!/bin/bash
-sudo apt update
-sudo apt install python3 -y
-sudo apt install docker.io -y
+sudo apt -y update
+sudo apt -y install python3 
+sudo apt -y install docker.io 
 sudo systemctl start docker
 EOF
  
