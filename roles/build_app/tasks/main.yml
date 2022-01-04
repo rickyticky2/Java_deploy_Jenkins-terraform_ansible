@@ -1,10 +1,10 @@
 ---
 # tasks file for build_app
 - name: install Maven
-    apt:
-      name: maven
-      state: present
-      update_cache: yes
+  apt:
+    name: maven
+    state: present
+    update_cache: yes
 
 - name: install Git
   apt:
