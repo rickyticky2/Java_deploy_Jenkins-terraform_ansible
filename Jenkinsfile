@@ -29,7 +29,7 @@ pipeline{
             steps{
                     withCredentials([usernamePassword(credentialsId: 'ae38ffdc-c52c-4c52-9dc7-90ae44610111', passwordVariable: 'DPWD', usernameVariable: 'DUSER')]) {
 
-                    ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible', playbook: 'awsplay.yml', credentialsId: 'sample-ssh-key' become: true, extras: "-e'IP1=${IP1}' -e'IP2=${IP2}' -e'USER=${DUSER}' -e'PWD=${DPWD}'"
+                    ansiblePlaybook disableHostKeyChecking: true, installation: 'ansible', playbook: 'awsplay.yml', credentialsId: 'sample-ssh-key', become: true, extras: "-e'IP1=${IP1}' -e'IP2=${IP2}' -e'USER=${DUSER}' -e'PWD=${DPWD}'"
                     }
               }
          }
