@@ -14,7 +14,7 @@
 
 - name: Checkout app code
   git:
-    repo: https://github.com/rickyticky2/boxfuse-sample-java-war-hello.git
+    repo: "{{repo_app}}"
     dest: /home/root/repo/
 
 - name: Build source code

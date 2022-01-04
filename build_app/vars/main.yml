@@ -1,2 +1,7 @@
 ---
 # vars file for build_app
+
+
+   Dlogin:  "{{ DUSER }}"
+   Dpassword: "{{ DPWD }}"
+   repo_app: https://github.com/rickyticky2/boxfuse-sample-java-war-hello.git

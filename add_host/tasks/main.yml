@@ -8,7 +8,7 @@
 - name: Add ip instance to host files
   add_host:
     hostname: "{{ IP2 }}"
-    groupname: run_istanc
+    groupname: run_istance
 
 - name: Wait for 1 instance
   wait_for:
