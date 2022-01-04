@@ -7,7 +7,7 @@ provider "aws" {
 resource "aws_instance" "web" {
   ami           = "ami-0fb653ca2d3203ac1"
   instance_type = "t2.micro"
-  user_data = "sudo apt update; sudo apt update; sudo apt install docker.io -y sudo apt install python-docker -y"
+  user_data = "sudo apt update; sudo apt update; sudo apt install docker.io -y; sudo apt install python-docker -y; sudo apt install python3-docker -y;"
   count=2
   #subnet_id = "subnet-0b2ff3014f0507633"
   key_name = "aazw"
