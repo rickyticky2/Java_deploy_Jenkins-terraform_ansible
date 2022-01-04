@@ -21,10 +21,6 @@
   become_user: root
   remote_user: ubuntu
 
- # vars:
- #   login:  "{{ USER }}"
- #   password: "{{ PWD }}"
-
   roles:
     - build_app
   
