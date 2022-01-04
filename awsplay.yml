@@ -21,45 +21,13 @@
   become_user: root
   remote_user: ubuntu
 
-  vars:
-    login:  "{{ USER }}"
-    password: "{{ PWD }}"
+ # vars:
+ #   login:  "{{ USER }}"
+ #   password: "{{ PWD }}"
 
-  tasks:
-  - name: Ensure Maven package is present
-    apt:
-      name: maven
-      state: present
-      update_cache: yes
-
-  - name: Ensure Git package is present
-    apt:
-      name: git
-      state: present
-      update_cache: yes
-
-  - name: Checkout app code
-    git:
-      repo: https://github.com/tatiana14/boxfuse-sample-java-war-hello.git
-      dest: /home/root/repo/
-
-  - name: Build source code
-    shell: "cd /home/root/repo && mvn package"
-
-  - name: Login to DockerHub
-    docker_login:
-      username: "{{ login }}"
-      password: "{{ password }}"
-
-  - name: Build And Push Docker image
-    docker_image:
-      build:
-        path: /home/root/repo
-      name: tatiana14/boxfuse_app
-      tag: v1
-      push: yes
-      state: present
-      source: build
+  roles:
+    - build_app
+  
 
 - name: Run application
   hosts: run_istance
@@ -71,7 +39,7 @@
     - name: Run docker image
       docker_container:
         name: boxfuse_app
-        image: tatiana14/boxfuse_app:v1
+        image: rickyticky2/boxfuse_app:v1
         ports:
           - 8080:8080
         state: started

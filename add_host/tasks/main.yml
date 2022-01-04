@@ -1,0 +1,23 @@
+---
+# tasks file for add_host
+- name: Add ip instance to host files
+      add_host:
+        hostname: "{{ IP1 }}"
+        groupname: build_istance
+
+- name: Add ip instance to host files
+  add_host:
+    hostname: "{{ IP2 }}"
+    groupname: run_istanc
+
+- name: Wait for 1 instance
+  wait_for:
+    state: started
+    host: "{{IP1 }}"
+    port: 22
+
+- name: Wait for instance
+  wait_for:
+    state: started
+    host: "{{IP2 }}"
+    port: 22

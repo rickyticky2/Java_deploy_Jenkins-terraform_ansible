@@ -1,0 +1,36 @@
+---
+# tasks file for build_app
+- name: install Maven
+    apt:
+      name: maven
+      state: present
+      update_cache: yes
+
+- name: install Git
+  apt:
+    name: git
+    state: present
+    update_cache: yes
+
+- name: Checkout app code
+  git:
+    repo: https://github.com/rickyticky2/boxfuse-sample-java-war-hello.git
+    dest: /home/root/repo/
+
+- name: Build source code
+  shell: "cd /home/root/repo && mvn package"
+
+- name: Login to DockerHub
+  docker_login:
+    username: "{{ Dlogin }}"
+    password: "{{ Dpassword }}"
+    
+- name: Build And Push Docker image
+  docker_image:
+    build:
+      path: /home/root/repo
+    name: rickyticky2/boxfuse_app
+    tag: v1
+    push: yes
+    state: present
+    source: build
