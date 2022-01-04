@@ -20,7 +20,7 @@ EOF
 }
 
 resource "aws_security_group" "my_servers" {
-  name        = "my_security group"
+  name        = "my_security group 1"
   description = "my_security group 1"
   #vpc_id      = aws_vpc.main.id
 
