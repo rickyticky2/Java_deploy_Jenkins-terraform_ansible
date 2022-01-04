@@ -12,6 +12,12 @@
     state: present
     update_cache: yes
 
+- name: install docker.io
+  apt:
+    name: docker.io
+    state: present
+    update_cache: yes    
+
 - name: Checkout app code
   git:
     repo: "{{repo_app}}"

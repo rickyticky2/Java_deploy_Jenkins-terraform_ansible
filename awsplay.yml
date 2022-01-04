@@ -32,6 +32,12 @@
   remote_user: ubuntu
 
   tasks:
+    - name: install docker.io
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
     - name: Run docker image
       docker_container:
         name: boxfuse_app

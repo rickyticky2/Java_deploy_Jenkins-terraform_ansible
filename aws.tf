@@ -15,8 +15,6 @@ resource "aws_instance" "web" {
 #!/bin/bash
 sudo apt -y update
 sudo apt -y install python3 
-sudo apt -y install docker.io 
-sudo systemctl start docker
 EOF
  
 }
