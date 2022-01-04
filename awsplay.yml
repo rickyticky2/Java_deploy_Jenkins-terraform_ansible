@@ -7,7 +7,7 @@
   remote_user: ubuntu
 
   roles:
-    - add_hosts
+    - add_host
 
 
 #  - name: Ensure Docker is started
