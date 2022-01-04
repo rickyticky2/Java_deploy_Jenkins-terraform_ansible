@@ -9,12 +9,6 @@
   roles:
     - add_host
 
-
-#  - name: Ensure Docker is started
- #   service:
- #     name: docker
- #     state: started
-
 - name: Build application
   hosts: build_istance
   become: yes
@@ -24,7 +18,6 @@
   roles:
     - build_app
   
-
 - name: Run application
   hosts: run_istance
   become: yes
