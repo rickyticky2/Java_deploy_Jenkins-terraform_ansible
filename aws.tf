@@ -17,7 +17,7 @@ sudo apt update
 sudo apt install python3 -y
 sudo apt install docker.io -y
 sudo systemctl start docker
-	EOF
+EOF
 }
 
 resource "aws_security_group" "my_servers" {
