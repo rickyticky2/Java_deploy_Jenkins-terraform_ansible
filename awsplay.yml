@@ -24,6 +24,11 @@
   become_user: root
   remote_user: ubuntu
 
+
+  vars:
+    image_name:  boxfuse_app
+    image_fname: rickyticky2/boxfuse_app:v1
+
   tasks:
     - name: install docker.io
       apt:
@@ -33,8 +38,8 @@
 
     - name: Run docker image
       docker_container:
-        name: boxfuse_app
-        image: rickyticky2/boxfuse_app:v1
+        name: "{{ image_name }}"
+        image: "{{ image_fname }}"
         ports:
           - 8080:8080
         state: started
