@@ -1,6 +1,8 @@
 provider "aws" {
   # Configure the AWS Provider
   region = "us-east-2"
+  shared_credentials_file = "/root/awscredentials"
+  profile = "testing"
 }
 resource "aws_instance" "web" {
   ami           = "ami-0fb653ca2d3203ac1"
