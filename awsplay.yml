@@ -1,5 +1,5 @@
 ---
-- name: Create instances
+- name: add IP instances to hosts file
   hosts: localhost
   gather_facts: False
   become: yes
