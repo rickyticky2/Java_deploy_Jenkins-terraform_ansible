@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage('Git checkout'){
             steps{
-                git branch: 'master', url: 'https://github.com/rickyticky2/Java_deploy_Jenkins-terraform_ansible.git'
+                git branch: 'main', url: 'https://github.com/rickyticky2/Java_deploy_Jenkins-terraform_ansible.git'
             }
         }
         stage('Create Instances with terraform'){
