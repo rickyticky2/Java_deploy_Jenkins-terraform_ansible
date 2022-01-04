@@ -8,7 +8,6 @@ resource "aws_instance" "web" {
   ami           = "ami-0fb653ca2d3203ac1"
   instance_type = "t2.micro"
   count=2
-  #subnet_id = "subnet-0b2ff3014f0507633"
   key_name = "aazw"
   vpc_security_group_ids = [aws_security_group.my_servers.id]
   user_data = <<EOF
