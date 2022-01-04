@@ -1,7 +1,5 @@
 provider "aws" {
   # Configure the AWS Provider
-  access_key = "XXXXXXXXXXXX"
-  secret_key = "XXXXXXXXXXXX"
   region = "us-east-2"
 }
 resource "aws_instance" "web" {
