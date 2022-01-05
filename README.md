@@ -18,7 +18,7 @@ Change the name and address of the container in awsplay.yml
 
 
 # You will need:
-- install Jenkins and run the following commands to set up the user. (can replace root with ubuntu or jenkins):
+- **install Jenkins and run the following commands to set up the user. (can replace root with ubuntu or jenkins):**
 
 
      sudo visudo
