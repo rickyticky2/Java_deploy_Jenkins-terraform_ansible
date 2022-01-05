@@ -16,17 +16,17 @@ Change the name and address of the container in awsplay.yml
 # You will need:
 - install Jenkins and run the following commands to set up the user. (can replace root with ubuntu or jenkins):
      sudo visudo
-     ## Add to the file:
-     jenkins ALL = (ALL) NOPASSWD: ALL
+     - Add to the file:
+     jenkins ALL=(ALL) NOPASSWD: ALL
     
-     service jenkins restart
-     sudo nano / etc / default / jenkins
-     $ JENKINS_USER = "root"
+    service jenkins restart
+    sudo nano /etc/default/jenkins
+    $JENKINS_USER="root"
 
-     sudo chown -R root: root / var / lib / jenkins
-     sudo chown -R root: root / var / cache / jenkins
-     sudo chown -R root: root / var / log / jenkins
-     service jenkins restart
+    sudo chown -R root:root /var/lib/jenkins
+    sudo chown -R root:root /var/cache/jenkins
+    sudo chown -R root:root /var/log/jenkins
+    service jenkins restart 
 
 - add jenkins credentials with data from your docker hub and replace in jenkinsfile - credentialsId in the "Run ansible playbook" stage
 
