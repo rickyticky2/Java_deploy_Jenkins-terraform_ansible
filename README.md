@@ -6,7 +6,10 @@ On one server, a JAVA application (Maven) will be built and packaged into a Dock
 On the second server, the container with the application is launched. (Tomcat)
 
 
-You can change the address of the repo with the application, the address of the docker hub container in \ roles \ build_app \ vars \ main.yml.
+You can change the address of the repo with the application, the address of the docker hub container in 
+         
+         \roles\build_app\vars\main.yml 
+         
 Change the name and address of the container in awsplay.yml
        
        vars:
@@ -16,6 +19,7 @@ Change the name and address of the container in awsplay.yml
 
 # You will need:
 - install Jenkins and run the following commands to set up the user. (can replace root with ubuntu or jenkins):
+
      sudo visudo
      - Add to the file:
      jenkins ALL=(ALL) NOPASSWD: ALL
@@ -28,6 +32,7 @@ Change the name and address of the container in awsplay.yml
     sudo chown -R root:root /var/cache/jenkins
     sudo chown -R root:root /var/log/jenkins
     service jenkins restart 
+    
 
 - add jenkins credentials with data from your docker hub and replace in jenkinsfile - credentialsId in the "Run ansible playbook" stage
 
