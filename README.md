@@ -47,8 +47,13 @@ Jenkins запустит Ansible playbook (awsplay.yml)
 На одном сервере произойдет сборка JAVA приложения (Maven) и упаковка его в Docker контейнер. 
 На втором сервере - запуск контейнера с приложением. (Tomcat)
 
-Вы можете менять адрес репо с приложением, адрес контейнера docker hub в \roles\build_app\vars\main.yml.
+Вы можете менять адрес репо с приложением, адрес контейнера docker hub в 
+
+\roles\build_app\vars\main.yml.
+
 Поменять имя и адрес контейнера небходимо в awsplay.yml
+
+
       vars:
         image_name:  boxfuse_app
         image_fname: rickyticky2/boxfuse_app:v1
