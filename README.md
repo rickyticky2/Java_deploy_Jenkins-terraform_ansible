@@ -1,4 +1,4 @@
-# Java_deploy_Jenkins-terraform_ansible
+## Java_deploy_Jenkins-terraform_ansible
 
 When you run the pipeline from jenkinsfile, 2 servers will be created in AWS (t2-micro), with OS - Ubuntu 20.04 using Terraform. (file - aws.tf)
 Jenkins will launch the Ansible playbook (awsplay.yml)
@@ -13,7 +13,7 @@ Change the name and address of the container in awsplay.yml
          image_fname: rickyticky2 / boxfuse_app: v1
 
 
-You will need:
+# You will need:
 - install Jenkins and run the following commands to set up the user. (can replace root with ubuntu or jenkins):
      sudo visudo
      ## Add to the file:
