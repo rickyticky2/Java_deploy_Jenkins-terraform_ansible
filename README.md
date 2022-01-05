@@ -28,7 +28,7 @@ You will need:
 ##-----------------------------------##
 
 
-При запуске pipeline из jenkinsfile - будут созданы 2 сервера в AWS (t2-micro), c OS - Ubuntu 20.04 средствами Terraform. (файо - aws.tf)
+При запуске pipeline из jenkinsfile - будут созданы 2 сервера в AWS (t2-micro), c OS - Ubuntu 20.04 средствами Terraform. (файл - aws.tf)
 Jenkins запустит Ansible playbook (awsplay.yml)
 На одном сервере произойдет сборка JAVA приложения (Maven) и упаковка его в Docker контейнер. 
 На втором сервере - запуск контейнера с приложением. (Tomcat)
