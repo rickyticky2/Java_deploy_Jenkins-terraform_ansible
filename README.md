@@ -8,6 +8,7 @@ On the second server, the container with the application is launched. (Tomcat)
 
 You can change the address of the repo with the application, the address of the docker hub container in \ roles \ build_app \ vars \ main.yml.
 Change the name and address of the container in awsplay.yml
+       
        vars:
          image_name: boxfuse_app
          image_fname: rickyticky2 / boxfuse_app: v1
