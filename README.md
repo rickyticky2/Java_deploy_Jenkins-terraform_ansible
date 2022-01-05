@@ -23,11 +23,11 @@ Change the name and address of the container in awsplay.yml
      sudo visudo
      - Add to the file:
      jenkins ALL=(ALL) NOPASSWD: ALL
-    
     service jenkins restart
+    #
     sudo nano /etc/default/jenkins
     $JENKINS_USER="root"
-
+    #
     sudo chown -R root:root /var/lib/jenkins
     sudo chown -R root:root /var/cache/jenkins
     sudo chown -R root:root /var/log/jenkins
