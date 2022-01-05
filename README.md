@@ -6,6 +6,13 @@ On one server, a JAVA application (Maven) will be built and packaged into a Dock
 On the second server, the container with the application is launched. (Tomcat)
 
 
+You can change the address of the repo with the application, the address of the docker hub container in \ roles \ build_app \ vars \ main.yml.
+Change the name and address of the container in awsplay.yml
+       vars:
+         image_name: boxfuse_app
+         image_fname: rickyticky2 / boxfuse_app: v1
+
+
 You will need:
 - install Jenkins and run the following commands to set up the user. (can replace root with ubuntu or jenkins):
      sudo visudo
@@ -32,6 +39,14 @@ You will need:
 Jenkins запустит Ansible playbook (awsplay.yml)
 На одном сервере произойдет сборка JAVA приложения (Maven) и упаковка его в Docker контейнер. 
 На втором сервере - запуск контейнера с приложением. (Tomcat)
+
+Вы можете менять адрес репо с приложением, адрес контейнера docker hub в \roles\build_app\vars\main.yml.
+Поменять имя и адрес контейнера небходимо в awsplay.yml
+      vars:
+        image_name:  boxfuse_app
+        image_fname: rickyticky2/boxfuse_app:v1
+
+
 
 Вам понадобится: 
 - установить Jenkins и выполнить следующие команды для настройки пользователя. (можно заменить root на ubuntu или jenkins) : 
