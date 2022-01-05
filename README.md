@@ -38,6 +38,7 @@ Change the name and address of the container in awsplay.yml
 
 - SSH key private key from AWS must be in /root/.ssh/aws. (remember path if running Jenkins from another user stage "Run ansible playbook")
 
+
 ##-----------------------------------##
 
 
@@ -54,10 +55,10 @@ Jenkins запустит Ansible playbook (awsplay.yml)
 
 
 
-Вам понадобится: 
+## Вам понадобится: 
 - установить Jenkins и выполнить следующие команды для настройки пользователя. (можно заменить root на ubuntu или jenkins) : 
     sudo visudo
-    ## Add to the file :
+    Add to the file :
     jenkins ALL=(ALL) NOPASSWD: ALL
     
     service jenkins restart
