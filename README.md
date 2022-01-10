@@ -37,7 +37,7 @@ Change the name and address of the container in awsplay.yml
     
     
 
-- **add jenkins credentials with data from your docker hub and replace in jenkinsfile - credentialsId in the "Run ansible playbook" stage**
+- **Add jenkins credentials with data from your docker hub and replace in jenkinsfile - credentialsId in the "Run ansible playbook" stage**
 
 - **SSH key private key from AWS must be in /root/.ssh/aws. (remember path if running Jenkins from another user stage "Run ansible playbook")**
 
@@ -52,7 +52,9 @@ Jenkins запустит Ansible playbook (awsplay.yml)
 
 Вы можете менять адрес репо с приложением, адрес контейнера docker hub в 
 
-\roles\build_app\vars\main.yml.
+
+           \roles\build_app\vars\main.yml.
+
 
 Поменять имя и адрес контейнера небходимо в awsplay.yml
 
@@ -64,20 +66,25 @@ Jenkins запустит Ansible playbook (awsplay.yml)
 
 
 ## Вам понадобится: 
-- установить Jenkins и выполнить следующие команды для настройки пользователя. (можно заменить root на ubuntu или jenkins) : 
-    sudo visudo
-    Add to the file :
-    jenkins ALL=(ALL) NOPASSWD: ALL
-    
-    service jenkins restart
-    sudo nano /etc/default/jenkins
+  - установить Jenkins и выполнить следующие команды для настройки пользователя. (можно заменить root на ubuntu или jenkins) : 
+  
+  
+     sudo visudo
+     - Add to the file:
+      
+     - jenkins ALL=(ALL) NOPASSWD: ALL
+     - service jenkins restart
+    #
+     - sudo nano /etc/default/jenkins
     $JENKINS_USER="root"
+    #
+     - sudo chown -R root:root /var/lib/jenkins
+     - sudo chown -R root:root /var/cache/jenkins
+     - sudo chown -R root:root /var/log/jenkins
+     - service jenkins restart 
+    
+    
 
-    sudo chown -R root:root /var/lib/jenkins
-    sudo chown -R root:root /var/cache/jenkins
-    sudo chown -R root:root /var/log/jenkins
-    service jenkins restart 
+- **Добавить jenkins credentials с данными от вашего docker hub и заменить в jenkinsfile - credentialsId в stage "Run ansible playbook"
 
-- добавить jenkins credentials с данными от вашего docker hub и заменить в jenkinsfile - credentialsId в stage "Run ansible playbook"
-
-- SSH ключ приватный ключ от AWS должен находиться в /root/.ssh/aws . (помнять путь, если запуск Jenkins от другого пользователя stage "Run ansible playbook" )
+- **SSH ключ приватный ключ от AWS должен находиться в /root/.ssh/aws . (помнять путь, если запуск Jenkins от другого пользователя stage "Run ansible playbook" )
