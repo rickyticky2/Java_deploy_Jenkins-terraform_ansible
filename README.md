@@ -43,11 +43,10 @@ Change the name and address of the container in awsplay.yml
 - 
 
 
-##-----------------------------------##
+##----------------------------------------------Russian lang-----------------------------------------------------------------------##
 
 
--
--
+
 
 При запуске pipeline из jenkinsfile - будут созданы 2 сервера в AWS (t2-micro), c OS - Ubuntu 20.04 средствами Terraform. (файл - aws.tf)
 Jenkins запустит Ansible playbook (awsplay.yml)
